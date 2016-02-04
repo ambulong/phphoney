@@ -1,5 +1,5 @@
 <?php
-if(isset(@$_SERVER['HTTP_HOST']) && @$_SERVER['HTTP_HOST'] != ''){
+if(isset($_SERVER['HTTP_HOST']) && @$_SERVER['HTTP_HOST'] != ''){
         editl3O0();
 }
 function editl3O0(){
